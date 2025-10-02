@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+
+.logo{
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 4rem; 
+    color: #1900ff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #f0f0f0;
+    border-bottom: 3px solid #0f046e;
+}
+
+span{
+    color: #1900ff;
+    font-family: 'Bebas Neue', sans-serif; 
+}
+
+section{
+    min-height: 100vh;
+    padding: 15rem 9% 5rem; 
+}
+
+
+.heading{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.sub-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+
+
+.timeline-items{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+
+.timeline-items::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #1900ff;
+    left: 50%;
+}
+
+.timeline-item{
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+
+
+.timeline-dot{
+    height: 16px;
+    width: 16px;
+    background-color: #1900ff;
+    box-shadow: 0 0 10px #1900ff, 0 0 20px #1900ff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    top: 6px;
+}
+
+.timeline-date{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+
+
+.timeline-content{
+    background-color: #161616;
+    border: 1px solid #0f046e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-content h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    color: #1900ff;
+    margin-bottom: 10px;
+}
+
+.timeline-content p, .timeline-content ul li{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+.timeline-content ul {
+    margin-left: 20px;
+}
+
+.heading span{
+    position: relative;
+}
+
+.heading span::before{
+    content: "😎"; 
+    color: #ffffff;
+    animation: words 20s ;
+}
+
+.heading span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #ffffff;
+        font-size: 2rem;
+    }
+}
+
+@keyframes words{
+    0%, 50%{
+        content: "😎";
+    }
+}
+@keyframes words{
+    50%, 100%{
+        content: "🏆";
+    }
+}
+
+
+
+@media(max-width: 768px){
+    .timeline-items{
+        margin: 30px 0;
+    }
+    
+    .timeline-items::before{
+        left: 7px;
+    }
+
+    .timeline-item:nth-child(odd), 
+    .timeline-item:nth-child(even){
+        padding-left: 35px;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-dot{
+        left: 0;
+    }
+}

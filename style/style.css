@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif; 
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 8rem;
+    color: #1900ff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+
+nav a{
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 2.2rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #f0f0f0;
+    border-bottom: 3px solid #0f046e;
+} 
+
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ffffff } 
+}
+
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #1900ff;
+        border-bottom: 3px solid #1900ff;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem; 
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2.5rem; 
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+
+.inicio .inicio-content h1{
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 8rem; 
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #1900ff;
+    font-family: 'Bebas Neue', sans-serif; 
+}
+
+.inicio-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+
+.inicio-content p{
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.6rem;
+}
+
+.inicio-img{
+    border-radius: 50%;
+}
+
+.inicio-img img{
+    position: relative;
+    width: 25vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #000000;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+
+.inicio-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #ffffff;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #ffffff;
+}
+
+.social-icons a:hover{
+    color: #ffffff;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #1900ff;
+    box-shadow: 0  0 25px #0625d4;
+}
+
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+
+.typing-text span{
+    border-right: 3px solid #1900ff; 
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+
+
+@media (max-width: 1000px){
+    .inicio{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .inicio{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .inicio .inicio-content h3{
+        font-size: 2.5rem;
+    }
+
+
+    .inicio .inicio-content h1{
+        font-size: 5.5rem; 
+    }
+
+    .inicio-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
